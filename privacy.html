@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Política de Privacidad - CluePost</title>
+<title>Política de Privacidad - CluePost y FootDoku</title>
 <style>
   body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: #2b2b33; background: #fff; }
   .page { max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.55; }
@@ -18,59 +18,82 @@
 <body>
 <div class="page">
 
-  <h1>Política de Privacidad de CluePost</h1>
-  <p class="updated">Última actualización: 12 de agosto de 2026</p>
+  <h1>Política de Privacidad de CluePost y FootDoku</h1>
+  <p class="updated">Última actualización: 15 de octubre de 2026</p>
 
-  <p>Esta Política de Privacidad describe cómo CluePost ("la aplicación", "el juego") trata la información al usarla. CluePost es un juego de puzzles de deducción lógica para dispositivos móviles.</p>
+  <p>Esta Política de Privacidad explica cómo CluePost y FootDoku tratan la información al utilizar sus juegos y servicios web. Las funciones y los datos tratados dependen del juego, la plataforma y las opciones que elijas. El progreso de CluePost y el de FootDoku se mantienen separados.</p>
 
-  <h2>1. Datos que recopila la aplicación</h2>
-  <p>CluePost no requiere registro ni cuenta de usuario para jugar. Los siguientes datos se generan durante el uso del juego y se guardan <strong>en el almacenamiento local de tu dispositivo</strong>:</p>
+  <h2>1. CluePost para dispositivos móviles</h2>
+  <p>CluePost no requiere una cuenta para jugar. Sin iniciar sesión, los datos de juego descritos a continuación se guardan en el almacenamiento local del dispositivo:</p>
   <ul>
-    <li>Nombre de jugador (elegido libremente por el usuario, no verificado)</li>
-    <li>Progreso de niveles completados y estadísticas de juego</li>
-    <li>Saldo de moneda interna (Sellos Postales)</li>
-    <li>Racha del puzzle diario (días consecutivos jugados)</li>
+    <li>Nombre de jugador elegido por el usuario.</li>
+    <li>Progreso de niveles completados y estadísticas de juego.</li>
+    <li>Saldo de moneda interna (Sellos Postales).</li>
+    <li>Racha del puzzle diario.</li>
   </ul>
-  <p>Si no inicias sesión con Google (ver sección 2), estos datos se eliminan automáticamente al desinstalar la aplicación.</p>
+  <p>Si juegas sin iniciar sesión, estos datos pueden perderse al desinstalar la aplicación o borrar sus datos.</p>
 
-  <h2>2. Inicio de sesión con Google y respaldo en la nube (opcional)</h2>
-  <p>CluePost ofrece, de forma opcional, iniciar sesión con tu cuenta de Google. Si eliges esta opción:</p>
+  <h2>2. Cuenta y sincronización de CluePost</h2>
+  <p>CluePost ofrece iniciar sesión opcionalmente con Google. Si eliges esta opción:</p>
   <ul>
-    <li>Se usa <strong>Firebase Authentication</strong> (Google) para verificar tu identidad. Recibimos tu identificador de cuenta de Google (UID) y, si lo compartes, tu nombre; CluePost no ve ni almacena tu contraseña de Google.</li>
-    <li>Tu progreso de juego (niveles completados, estadísticas, moneda interna, racha diaria) se guarda además en <strong>Firebase Firestore</strong> (Google Cloud), asociado a ese identificador, para que puedas recuperar tu progreso si cambias de dispositivo o reinstalas la app, y para mantenerlo sincronizado con la versión web de CluePost si usas la misma cuenta.</li>
-    <li>Para no pedirte que inicies sesión cada vez que abres la app, guardamos en tu dispositivo un token de sesión que nos permite reconectarte a tu cuenta de Google automáticamente. Puedes cerrar sesión en cualquier momento desde la pantalla de Perfil; al hacerlo se borra ese token del dispositivo. El progreso guardado en la nube no se borra al cerrar sesión, pero deja de sincronizarse con ese dispositivo hasta que vuelvas a iniciar sesión.</li>
-    <li>Si prefieres no vincular una cuenta, puedes jugar completamente sin iniciar sesión ("Jugar sin cuenta"); en ese caso tu progreso vive solo en el dispositivo y se pierde si desinstalas la app.</li>
+    <li>Firebase Authentication verifica tu identidad. CluePost recibe un identificador de cuenta de Firebase y, si está disponible, el nombre de perfil. CluePost no recibe ni almacena tu contraseña de Google.</li>
+    <li>El progreso y los datos necesarios para las funciones que utilices pueden guardarse en Firebase Firestore asociados a tu cuenta para permitir su recuperación y sincronización entre las versiones compatibles de CluePost.</li>
+    <li>La sesión puede mantenerse en el dispositivo para evitar que tengas que iniciar sesión cada vez. Puedes cerrar sesión desde la aplicación; hacerlo detiene la sincronización en ese dispositivo, pero no elimina por sí mismo los datos que ya estén guardados en la nube.</li>
   </ul>
 
-  <h2>3. Funciones sociales: amigos, retos y puzzle diario (opcional)</h2>
-  <p>Si iniciaste sesión con Google, CluePost ofrece de forma opcional un sistema de amigos y comparación de tiempos en el puzzle diario. Si usas estas funciones, se guarda además en Firebase Firestore:</p>
+  <h2>3. Funciones sociales de CluePost</h2>
+  <p>Si inicias sesión, puedes utilizar funciones sociales opcionales. Para ofrecerlas, CluePost puede guardar en Firebase Firestore:</p>
   <ul>
-    <li>Un <strong>código de amigo</strong> de seis caracteres, derivado de tu identificador de cuenta. Sirve para que otra persona te agregue sin que tengas que darle tu identificador ni tu email de Google. Es legible por cualquier usuario que haya iniciado sesión.</li>
-    <li>Tu <strong>lista de amistades</strong>, con el nombre de perfil de cada contacto. Solo la puedes leer tú.</li>
-    <li>Los <strong>tiempos que tardas en resolver el puzzle diario</strong>, por fecha y dificultad. Estos tiempos, junto a tu nombre de perfil, <strong>son legibles por cualquier usuario que haya iniciado sesión</strong>, no solo por tus amigos, porque es lo que permite compararse. No se publican fuera del juego ni se indexan.</li>
-    <li>Los <strong>retos</strong> que te envían tus amigos, que incluyen su nombre de perfil.</li>
-    <li>Un <strong>aviso de que un amigo aceptó tu pedido de amistad</strong>, con su nombre de perfil. Solo lo puedes leer tú.</li>
+    <li>Un código de amigo asociado a tu cuenta.</li>
+    <li>Tu lista de amistades y los nombres de perfil necesarios para mostrarla.</li>
+    <li>Los tiempos del puzzle diario y la información necesaria para compararlos dentro del juego.</li>
+    <li>Los retos y avisos relacionados con las solicitudes de amistad.</li>
   </ul>
-  <p>Todas estas funciones son opcionales: puedes jugar el juego completo, incluido el puzzle diario, sin agregar a nadie. Si no quieres que tus tiempos sean visibles para otros usuarios, no uses el sistema de amigos y escríbenos para eliminar los datos ya guardados.</p>
+  <p>Algunos datos de comparación, como el nombre de perfil y los tiempos del puzzle diario, pueden ser visibles para otros usuarios con sesión iniciada. Estas funciones son opcionales.</p>
 
-  <h2>4. Publicidad</h2>
-  <p>CluePost utiliza <strong>Google AdMob</strong> para mostrar anuncios de vídeo recompensado, siempre de forma voluntaria (el usuario elige verlos a cambio de una recompensa dentro del juego; la aplicación no muestra anuncios forzados, intersticiales ni banners).</p>
-  <p>Google AdMob y sus socios publicitarios pueden recopilar identificadores de publicidad del dispositivo y otros datos técnicos para mostrar anuncios. Puedes consultar cómo Google trata estos datos en su <a href="https://policies.google.com/technologies/partner-sites">Política de Privacidad de Google</a>, y gestionar tus preferencias de anuncios personalizados desde la configuración de tu dispositivo (Android: Configuración → Google → Anuncios).</p>
+  <h2>4. FootDoku para dispositivos móviles</h2>
+  <p>FootDoku puede jugarse sin iniciar sesión. En la aplicación móvil, el progreso, la configuración, el perfil local del club y los Content Packs instalados se guardan en el dispositivo. Estos datos no se sincronizan automáticamente con la versión web ni con la aplicación de CluePost.</p>
+  <p>FootDoku puede utilizar Google AdMob para mostrar anuncios, incluidos anuncios intersticiales en determinados momentos del juego. La disponibilidad y personalización de los anuncios puede depender de las opciones de consentimiento, la región y la configuración del dispositivo.</p>
 
-  <h2>5. Menores de edad</h2>
-  <p>CluePost está pensado para jugadores a partir de 12 años. La aplicación no solicita ni recopila conscientemente datos personales identificables de menores más allá de lo descrito en las secciones 2 y 3 (inicio de sesión opcional con Google y funciones sociales). Los anuncios se sirven conforme a la configuración de audiencia declarada en Google Play y Google AdMob.</p>
+  <h2>5. FootDoku web, cuenta y sincronización</h2>
+  <p>FootDoku web puede usarse con funciones locales o iniciando sesión con Google. Si eliges iniciar sesión:</p>
+  <ul>
+    <li>Firebase Authentication verifica tu identidad. CluePost recibe un identificador de cuenta y la información de perfil que facilite Google; no recibe ni almacena tu contraseña.</li>
+    <li>El progreso de FootDoku web puede sincronizarse mediante Firebase Firestore. Se guarda en un espacio propio de FootDoku web, separado del progreso de CluePost y del progreso de la aplicación móvil de FootDoku.</li>
+    <li>El perfil del club creado en la web puede guardarse localmente en el navegador. No se sincroniza con la aplicación móvil salvo que una función futura lo indique expresamente.</li>
+  </ul>
+  <p>Si no inicias sesión, el progreso web se guarda localmente en el navegador y puede perderse si borras sus datos.</p>
 
-  <h2>6. Terceros</h2>
-  <p>Los servicios de terceros integrados actualmente son <strong>Google AdMob</strong> (publicidad) y <strong>Google Firebase</strong> (autenticación, almacenamiento en la nube y funciones sociales, solo si eliges iniciar sesión). No se comparten datos con ningún otro servicio de análisis, redes sociales o terceros adicionales en la versión actual de la aplicación. Si esto cambia en el futuro, esta política se actualizará.</p>
+  <h2>6. Content Packs y publicación de mods de FootDoku</h2>
+  <p>FootDoku permite crear, instalar y, según las opciones disponibles, publicar Content Packs. Al publicar uno, se envían al servicio los datos que contiene, como su nombre, autor, descripción, equipos, plantillas, dorsales, posiciones, kits, calendario, puzzles generados y configuración visual de sus tarjetas. También pueden enviarse los recursos declarados que sean necesarios para el pack.</p>
+  <p>Los packs publicados mediante código no se incorporan automáticamente a un catálogo público. Si eliges una opción de publicación pública, el contenido destinado a mostrarse públicamente podrá ser consultado por otros usuarios. No incluyas información personal que no quieras compartir en los nombres, descripciones o datos del pack.</p>
+  <p>La instalación de un Content Pack guarda una copia local en el dispositivo o navegador correspondiente. Instalar un pack no combina su progreso con el contenido oficial de FootDoku.</p>
 
-  <h2>7. Tus derechos</h2>
-  <p>Si juegas sin cuenta, CluePost no recopila datos personales en servidores propios y no existe un perfil que gestionar. Si iniciaste sesión con Google, puedes pedirnos la eliminación de tu progreso guardado en la nube, tu código de amigo, tu lista de amistades y los tiempos guardados del puzzle diario escribiendo a <a href="mailto:cluepostgame@gmail.com">cluepostgame@gmail.com</a>. Para el tratamiento de datos por parte de Google AdMob, puedes gestionar tus preferencias desde la configuración de anuncios de tu dispositivo.</p>
+  <h2>7. Publicidad y consentimiento</h2>
+  <p>Google AdMob y sus socios pueden tratar identificadores publicitarios, información del dispositivo y datos relacionados con la interacción con anuncios para prestar sus servicios y, cuando corresponda, personalizarlos. Las opciones de consentimiento disponibles dependen de la región y de la configuración aplicable.</p>
+  <p>Puedes consultar cómo Google trata los datos en su <a href="https://policies.google.com/technologies/partner-sites">Política de Privacidad para sitios y aplicaciones asociados de Google</a>. También puedes revisar las opciones de privacidad y consentimiento que ofrezca cada juego, así como la configuración de anuncios de tu dispositivo.</p>
 
-  <h2>8. Cambios en esta política</h2>
-  <p>Esta política puede actualizarse si se añaden nuevas funciones (por ejemplo, nuevos métodos de inicio de sesión, un mecanismo de consentimiento de anuncios para usuarios de la Unión Europea/Reino Unido/Suiza, o nuevos servicios de terceros). La fecha de "Última actualización" reflejará cualquier cambio.</p>
+  <h2>8. Servicios de terceros</h2>
+  <p>Según las funciones que utilices, los servicios de terceros pueden incluir:</p>
+  <ul>
+    <li><strong>Google Firebase</strong>, para autenticación y almacenamiento en la nube de las funciones que requieren una cuenta.</li>
+    <li><strong>Google AdMob</strong>, para la publicidad de FootDoku móvil.</li>
+    <li><strong>Google</strong>, para el inicio de sesión con Google cuando eliges esa opción.</li>
+  </ul>
+  <p>Estos servicios pueden tratar datos conforme a sus propias políticas de privacidad y a la configuración aplicable. Las funciones locales que no requieren cuenta no envían por sí solas el progreso local a Firebase.</p>
 
-  <h2>9. Contacto</h2>
-  <p>Para cualquier consulta sobre esta política, puedes escribir a: <a href="mailto:cluepostgame@gmail.com">cluepostgame@gmail.com</a></p>
+  <h2>9. Menores de edad</h2>
+  <p>Los juegos están dirigidos al público indicado en sus respectivas fichas de distribución. No intentes incluir datos personales de menores en nombres, descripciones, equipos, jugadores u otros contenidos creados por usuarios. La publicidad y el tratamiento aplicable se configuran de acuerdo con las opciones de audiencia y las normas correspondientes.</p>
+
+  <h2>10. Conservación y solicitudes de privacidad</h2>
+  <p>Los datos locales permanecen en el dispositivo o navegador hasta que se eliminen sus datos o se desinstale la aplicación. Los datos asociados a una cuenta pueden permanecer en los servicios en la nube hasta que se solicite su eliminación o se eliminen conforme a los procedimientos aplicables.</p>
+  <p>Para solicitar información o la eliminación de datos asociados a una cuenta, un progreso sincronizado o un Content Pack publicado por ti, escribe a <a href="mailto:cluepostgame@gmail.com">cluepostgame@gmail.com</a>. Indica el juego y la plataforma a los que se refiere tu solicitud. Cerrar sesión o desinstalar una aplicación no elimina automáticamente los datos guardados en la nube.</p>
+
+  <h2>11. Cambios en esta política</h2>
+  <p>Esta política puede actualizarse cuando cambien los juegos, sus funciones, los servicios utilizados o los requisitos aplicables. La fecha de actualización indicará cuándo se revisó por última vez.</p>
+
+  <h2>12. Contacto</h2>
+  <p>Para consultas sobre esta política o sobre privacidad, escribe a <a href="mailto:cluepostgame@gmail.com">cluepostgame@gmail.com</a>.</p>
 
 </div>
 </body>
